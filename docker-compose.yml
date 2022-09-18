@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  nginx:
+    build: ./nginx
+    restart: always
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+  app:
+    build: ./app
+    ports:
+      - "8080:8080"
